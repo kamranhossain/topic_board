@@ -71,7 +71,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(APPS_DIR.path('templates')),str(ROOT_DIR('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -139,7 +139,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = str(ROOT_DIR('staticfiles'))
 
 STATICFILES_DIRS = (
-    str(APPS_DIR.path('static')),
+    # str(APPS_DIR.path('static')),
+    str(ROOT_DIR('static')),
 )
 
 STATICFILES_FINDERS = (
